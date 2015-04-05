@@ -387,7 +387,6 @@ Rails.application.config.sorcery.configure do |config|
     #
     # user.last_login_at_attribute_name =
 
-
     # Last logout attribute name.
     # Default: `:last_logout_at`
     #
@@ -404,7 +403,6 @@ Rails.application.config.sorcery.configure do |config|
     # Default: `10 * 60`
     #
     # user.activity_timeout =
-
 
     # -- external --
     # Class which holds the various external provider data for this user.
