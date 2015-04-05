@@ -19,35 +19,24 @@
     <div class="col-md-3">
       <div class="jumbotron">
         <h1>Login</h1>
-          <%= form_tag sessions_path, method: :post do %>
-       </div>
-    </div>
-  </div>         
 
-  <div class="row">
-      <div class="col-md-2">
-        <div class="field">
-          <%= label_tag :email %>
-          <%= text_field_tag :email %>
-        </div>
-      </div>
-  </div>
-
-  <div class="row">
-    <div class="col-md-2">
-      <div class="field">
-        <%= label_tag :password %>
-        <%= password_field_tag :password %>
-      </div>
-    </div>
-  </div>
-
-  <div class="actions">
-    <%= submit_tag "Login", class: 'btn btn-primary' %>
-  </div>
-
-  <% end %>
-  <%= link_to "Create an Account", '/users/new' %> 
+        <%= form_tag sessions_path do %>
+<div class="field">
+<%= label_tag :email %>
+<%= text_field_tag :email, params[:email] %>
+</div>
+<div class="field">
+<%= label_tag :password %>
+<%= password_field_tag :password %>
+</div>
+<div class="field">
+<%= check_box_tag :remember_me, 1, params[:remember_me] %>
+<%= label_tag :remember_me %>
+</div>
+<div class="actions"><%= submit_tag "Log in" %></div>
+<% end %>
+  
+<!--   <%= link_to "Create an Account", '/users/new' %>  -->
 
   <div class="col-md-8">
     <h1 style="color: white;" align="center"><u>Welcome to <span style="color: #f04545;">atlSpeaker</span>.</u></h1>

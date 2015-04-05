@@ -6,7 +6,7 @@ class SpeakersController < ApplicationController
   end
 
   def show
-    @speaker = Speaker.find(params[:id])
+    @speaker = Speaker.find(speaker_params)
     # @comment = Comment.new
     # @comment.speaker_id = @speaker.id
     
