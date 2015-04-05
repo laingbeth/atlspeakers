@@ -1,0 +1,36 @@
+<style type="text/css">
+  .tag{
+    background: #f04545;
+    border-radius: 10px;
+  }
+</style>
+<body style="background: url(/3.jpg);">
+<div class="container">
+<div class="tag">
+<h3>
+  &nbsp;&nbsp;&nbsp;Tags:
+  <% @speaker.tags.each do |tag| %>
+    <%= link_to tag.name, tag_path(tag) %>
+   <% end %>
+</h3>
+</div>
+<div class="jumbotron">
+<h1><%= @speaker.title %></h1>
+<% if @speaker.image.exists? %>
+<p><%= image_tag @speaker.image.url %></p>
+<% end %>
+<p><%= @speaker.body %></p>
+<h3><%= link_to "delete", speaker_path(@speaker), method: :delete, data: {confirm: "Do you want to delete '#{@speaker.title}'?"}
+ %> |
+<%= link_to "edit", edit_speaker_path(@speaker) %></h3>
+</div>
+<div class="jumbotron">
+<h3><u>Comments (<%= @speaker.comments.size %>)</u></h3>
+<p><%= render partial: 'speakers/comment', collection: @speaker.comments %></p>
+<h3><u>Post your Comments</u></h3>
+<%= render partial: 'comments/form' %>
+</div>
+<div class="btn btn-default"><%= link_to "Back To speakers List", speakers_path %></div>
+</div>
+<br>
+</body>

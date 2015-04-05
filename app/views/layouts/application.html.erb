@@ -8,6 +8,20 @@
 </head>
 <body>
 
+ <div class="container">
+    <div id="content">
+      <div class="logdet">
+      <h4>
+      <%= bootstrap_flash %>
+        <% if logged_in? %>
+          <p style="color: yellow;"><%= "#{current_user.email}" %>
+          <%= link_to "Signout", logout_path %>
+        <% else %>
+          <%= link_to "SignIn", login_path %>
+        <% end %></p>
+      </h4>
+      </div>
+
 <%= yield %>
 
 </body>

@@ -1,0 +1,42 @@
+<style type="text/css"> 
+  .speakers{
+    list-style: none;
+  }
+  .speakers ul li{
+    list-style: none;
+    font-size: 24px;
+    line-height: 200%;
+  }
+  .art{
+    color: #f04545;
+    font-size: 15px;
+  }
+</style>
+<body background="/atl1.jpg">
+<div class="container">
+<div class="row">
+  <div class="col-md-8">
+    <h1 style="color: white;"><u>All Speakers</u></h1>
+  </div>
+  <div class="col-md-1">
+    <h1><%= link_to "Speakers", speakers_path, class: "btn btn-primary" %></h1>
+  </div>
+  <div class="col-md-2">
+    <h1><%= link_to "Create New Speaker Profile", new_speaker_path, class: "btn btn-primary" %></h1>
+  </div>
+</div>
+<div class="speakers">
+<ul>
+  <% @speakers.each do |speaker| %>
+  <li>
+    <div class="jumbotron" style="background-color: rgba(0,0,0,0.4)">
+    <h2><%= link_to speaker.title, speaker_path(speaker) %></h2>
+    <p style="color: white;line-height: 100%;"><%=h truncate(speaker.body, :length=>230) %>&nbsp;<%= link_to "see more", speaker_path(speaker), :class=>"art" %></p>
+    </div>
+  </li>
+  <% end %>
+</ul>
+<h3 align="right"><%= will_paginate @speakers %></h3>
+</div>
+</div>
+</body>

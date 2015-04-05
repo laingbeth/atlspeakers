@@ -13,3 +13,11 @@
  *= require_tree .
  *= require_self
  */
+.jumbotron {
+    background-color: rgba(238, 238, 238, 0.3); //  what you need
+}
+* {
+  -webkit-border-radius: 0 !important;
+     -moz-border-radius: 0 !important;
+          border-radius: 0 !important;
+}
