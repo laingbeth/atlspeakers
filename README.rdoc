@@ -1,28 +1,17 @@
-== README
+App developed to match local experts with community groups looking for people to speak at their events. 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+technologies used include:
+raild 4.2
+ruby 2.1.2
+postgresql database
+boostrap
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Additional gems include:
+paperclip "~> 4.2"
+hirb
+sorcery '~> 0.8.6'
+therubyracer
+less-rails
+mail
+will_paginate, '~> 3.0'
+rails_12factor
